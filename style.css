@@ -1,0 +1,100 @@
+body {
+  background-color: #323133;
+  font-family: 'Comfortaa', cursive;
+  margin: 0;
+}
+
+body > a {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+}
+
+body .timer {
+  color: #fff;
+}
+
+body .timer .begin {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  cursor: pointer;
+}
+
+body .timer .show {
+  position: fixed;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  transform: translateY(-50%);
+  height: 100%;
+  background-color: #2ABA66;
+  transition: height .5s ease;
+}
+
+body .timer .show.timeup {
+  background-color: #D8334A;
+}
+
+body .timer .timecontainer {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  transform: translateY(-50%);
+}
+
+body .timer .timecontainer > .time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+body .timer .timecontainer > .time .switcher {
+  display: flex;
+  position: relative;
+}
+
+body .timer .timecontainer > .time .switcher .time {
+  font-size: 25vw;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .up,
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .down {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  height: 3vw;
+  cursor: pointer;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .up:before,
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .down:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3vw solid transparent;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .up {
+  top: -2vw;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .up:before {
+  border-top: 0;
+  border-bottom-color: #fff;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .down {
+  bottom: 1vw;
+}
+
+body .timer .timecontainer > .time .switcher:not([type="none"]):not(.active) .down:before {
+  border-bottom: 0;
+  border-top-color: #fff;
+}
